@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import addNotification from 'react-push-notification';
+import { ToastContainer, toast } from 'react-toastify';
 
-import { GlobalButton, GlobalInput } from '..';
+import { GlobalButton, GlobalInput, Notify } from '..';
 
 import nuIcon from '../../assets/nu-icon.png';
 import logoImg from '../../assets/logo-global.svg';
@@ -52,7 +53,7 @@ export function Step2() {
 					<GlobalButton
 						disabled={text ? false : true}
 						text="finalizar =)"
-						onClick={handleNotification}
+						onClick={() => toast(<Notify />)}
 					/>
 				</div>
 				<div className="w-full lg:w-96 mt-14 border-t-[1px] border-solid border-[#E7E7E7]/20">
@@ -60,6 +61,11 @@ export function Step2() {
 						Passo 2 de 2.
 					</p>
 				</div>
+				<ToastContainer
+					hideProgressBar
+					closeButton={false}
+					toastStyle={{ width: '30rem' }}
+				/>
 			</div>
 		</>
 	);

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import addNotification from 'react-push-notification';
+import { ToastContainer, toast } from 'react-toastify';
 
 import {
 	MoneyCareButton,
 	MoneyCareContainer,
 	MoneyCareInput,
+	Notify,
 } from '../../components';
 
 import nuIcon from '../../assets/nu-icon.png';
@@ -46,7 +48,15 @@ export function WithdrawMoneyCare() {
 							onChange={(e: any) => setText(e.target.value)}
 						/>
 					</div>
-					<MoneyCareButton text="RECEBER PIX" onClick={handleNotification} />
+					<MoneyCareButton
+						text="RECEBER PIX"
+						onClick={() => toast(<Notify />)}
+					/>
+					<ToastContainer
+						hideProgressBar
+						closeButton={false}
+						toastStyle={{ width: '30rem' }}
+					/>
 				</div>
 			</div>
 		</MoneyCareContainer>

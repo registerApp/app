@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import addNotification from 'react-push-notification';
+import { ToastContainer, toast } from 'react-toastify';
 
 import { Button, PixKeyItem, TextInput } from '.';
 
 import nuIcon from '../../assets/nu-icon.png';
+import { Notify } from '..';
 
 interface CustomerFormProps {
 	open?: boolean;
@@ -60,7 +62,7 @@ export function PixKeyForm({ open, setOpen }: CustomerFormProps) {
 				setText('PROCESSANDO...');
 				setDisabled(true);
 				setText('Pagamento enviado com sucesso');
-				handleNotification();
+				toast(<Notify />);
 			}, 2000);
 		}
 	}
@@ -141,6 +143,12 @@ export function PixKeyForm({ open, setOpen }: CustomerFormProps) {
 								disabled={disabled}
 							/>
 						</footer>
+
+						<ToastContainer
+							hideProgressBar
+							closeButton={false}
+							toastStyle={{ width: '30rem' }}
+						/>
 					</Dialog.Content>
 				</Dialog.Overlay>
 			</Dialog.Portal>

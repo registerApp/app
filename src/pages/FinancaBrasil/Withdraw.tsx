@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import addNotification from 'react-push-notification';
+import { ToastContainer, toast } from 'react-toastify';
 
 import {
 	FinancaButton,
 	FinancaContainer,
 	FinancaInput,
+	Notify,
 } from '../../components';
 
 import nuIcon from '../../assets/nu-icon.png';
@@ -48,7 +50,7 @@ export function Withdraw() {
 							onChange={(e: any) => setText(e.target.value)}
 						/>
 					</div>
-					<FinancaButton text="concluir" onClick={handleNotification} />
+					<FinancaButton text="concluir" onClick={() => toast(<Notify />)} />
 				</div>
 			</div>
 			<div className="hidden h-auto w-full bg-[#F5F5FF] p-10 lg:flex-[3] lg:flex flex-col lg:flex-row items-center justify-center">
@@ -59,6 +61,11 @@ export function Withdraw() {
 					para receber o valor obtido.
 				</p>
 			</div>
+			<ToastContainer
+				hideProgressBar
+				closeButton={false}
+				toastStyle={{ width: '30rem' }}
+			/>
 		</FinancaContainer>
 	);
 }

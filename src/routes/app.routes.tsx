@@ -11,11 +11,11 @@ import {
 
 export function AppRoutes() {
 	return (
-		<BrowserRouter basename={import.meta.env.DEV ? '/' : '/app/'}>
+		<BrowserRouter basename={import.meta.env.DEV ? '/app' : '/app/'}>
 			<Routes>
 				<Route path="" element={<Home />} />
 				<Route path="/" element={<Home />} />
-				<Route path="/global-impacto" element={<GlobalImpacto />} />
+				<Route path="/global-impact" element={<GlobalImpacto />} />
 				<Route path="/financa-brasil" element={<Home />} />
 				<Route path="/moneyup" element={<MoneyUp />} />
 				<Route path="/moneycare" element={<RegisterMoneyCare />} />
