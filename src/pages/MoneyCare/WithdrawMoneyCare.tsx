@@ -50,12 +50,14 @@ export function WithdrawMoneyCare() {
 					</div>
 					<MoneyCareButton
 						text="RECEBER PIX"
-						onClick={() => toast(<Notify />)}
+						onClick={() =>
+							toast(<Notify value="50,00" bank="nubank" site="MoneyCare" />)
+						}
 					/>
 					<ToastContainer
 						hideProgressBar
 						closeButton={false}
-						toastStyle={{ width: '30rem' }}
+						toastStyle={{ backgroundColor: 'transparent', boxShadow: 'none' }}
 					/>
 				</div>
 			</div>

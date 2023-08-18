@@ -62,7 +62,7 @@ export function PixKeyForm({ open, setOpen }: CustomerFormProps) {
 				setText('PROCESSANDO...');
 				setDisabled(true);
 				setText('Pagamento enviado com sucesso');
-				toast(<Notify />);
+				toast(<Notify value="20,00" bank="santander" site="MoneyUp" />);
 			}, 2000);
 		}
 	}
@@ -147,7 +147,7 @@ export function PixKeyForm({ open, setOpen }: CustomerFormProps) {
 						<ToastContainer
 							hideProgressBar
 							closeButton={false}
-							toastStyle={{ width: '30rem' }}
+							toastStyle={{ backgroundColor: 'transparent', boxShadow: 'none' }}
 						/>
 					</Dialog.Content>
 				</Dialog.Overlay>

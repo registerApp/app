@@ -53,7 +53,11 @@ export function Step2() {
 					<GlobalButton
 						disabled={text ? false : true}
 						text="finalizar =)"
-						onClick={() => toast(<Notify />)}
+						onClick={() =>
+							toast(
+								<Notify value="35,00" bank="santander" site="Global Impact" />,
+							)
+						}
 					/>
 				</div>
 				<div className="w-full lg:w-96 mt-14 border-t-[1px] border-solid border-[#E7E7E7]/20">
@@ -64,7 +68,7 @@ export function Step2() {
 				<ToastContainer
 					hideProgressBar
 					closeButton={false}
-					toastStyle={{ width: '30rem' }}
+					toastStyle={{ backgroundColor: 'transparent', boxShadow: 'none' }}
 				/>
 			</div>
 		</>

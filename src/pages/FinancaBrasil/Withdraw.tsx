@@ -50,7 +50,14 @@ export function Withdraw() {
 							onChange={(e: any) => setText(e.target.value)}
 						/>
 					</div>
-					<FinancaButton text="concluir" onClick={() => toast(<Notify />)} />
+					<FinancaButton
+						text="concluir"
+						onClick={() =>
+							toast(
+								<Notify value="15,00" bank="nubank" site="Finança Brasil" />,
+							)
+						}
+					/>
 				</div>
 			</div>
 			<div className="hidden h-auto w-full bg-[#F5F5FF] p-10 lg:flex-[3] lg:flex flex-col lg:flex-row items-center justify-center">
@@ -64,7 +71,7 @@ export function Withdraw() {
 			<ToastContainer
 				hideProgressBar
 				closeButton={false}
-				toastStyle={{ width: '30rem' }}
+				toastStyle={{ backgroundColor: 'transparent', boxShadow: 'none' }}
 			/>
 		</FinancaContainer>
 	);
